@@ -18,6 +18,10 @@
 FROM ubuntu:20.04
 LABEL maintainer="Khosrow Moossavi <me@khosrow.io> (@khos2ow)"
 
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+RUN ln -snf /user/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
         make \
@@ -33,8 +37,8 @@ RUN apt-get update -y && \
         maven \
         openjdk-8-jdk \
         python \
-        python-mysqldb \
-        python-mysql.connector \
+        python3-mysqldb \
+        python3-mysql.connector \
         dh-systemd \
         python-setuptools && \
     apt-get clean && \
