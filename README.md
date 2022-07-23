@@ -1,8 +1,6 @@
-**Note: As the official repository seems unattended, we will continue the efforts in this one.**
-
 # CloudStack DEB Package builder using Docker
 
-[![Build Status](https://github.com/scclouds/cloudstack-deb-builder/workflows/ci/badge.svg)](https://github.com/scclouds/cloudstack-deb-builder/actions)
+[![Build Status](https://github.com/BartJM/cloudstack-deb-builder/workflows/ci/badge.svg)](https://github.com/BartJM/cloudstack-deb-builder/actions)
 [![Docker Pulls](https://img.shields.io/docker/pulls/scclouds/cloudstack-deb-builder.svg)](https://store.docker.com/community/images/scclouds/cloudstack-deb-builder)
 [![license](https://img.shields.io/github/license/scclouds/cloudstack-deb-builder.svg)](https://github.com/scclouds/cloudstack-deb-builder/blob/master/LICENSE)
 
