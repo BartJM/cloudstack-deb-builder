@@ -28,6 +28,8 @@ for releases. A very good candidate to be used by the Jenkins slaves of the proj
 
 ## Supported tags and respective `Dockerfile` links
 
+- [`latest`, `ubuntu2004` (ubuntu2004/Dockerfile)][ubuntu2004-dockerfile]
+- [`ubuntu2004` (ubuntu2004/Dockerfile)][ubuntu2004-dockerfile]
 - [`ubuntu1804-jdk11` (ubuntu1804-jdk11/Dockerfile)][ubuntu1804-jdk11-dockerfile]
 - [`ubuntu1804` (ubuntu1804/Dockerfile)](ubuntu1804-dockerfile)
 - [`ubuntu1604` (ubuntu1604/Dockerfile)][ubuntu1604-dockerfile]
@@ -58,14 +60,14 @@ required:
 
 ### Pull Docker images
 
-Let's assume we want to build packages for Ubuntu 16.04 (Xenial). We pull that
+Let's assume we want to build packages for Ubuntu 20.04 (Focal). We pull that
 image first:
 
 ```bashe
 docker pull scclouds/cloudstack-deb-builder:ubuntu1604
 ```
 
-You can replace `ubuntu1604` tag by `ubuntu1804`, `ubuntu1404` or `latest` if
+You can replace `ubuntu2004` tag by `ubuntu1804`, `ubuntu1404` or `latest` if
 you want.
 
 ### Build local repository
@@ -196,6 +198,7 @@ included in the root directory of the source tree for extended license details.
 
 [Apache License version 2.0]: http://www.apache.org/licenses/LICENSE-2.0
 [LICENSE]: https://github.com/scclouds/cloudstack-deb-builder/blob/master/LICENSE
+[ubuntu2004-dockerfile]: https://github.com/scclouds/cloudstack-deb-builder/blob/master/ubuntu2004/Dockerfile
 [ubuntu1804-jdk11-dockerfile]: https://github.com/scclouds/cloudstack-deb-builder/blob/master/ubuntu1804-jdk11/Dockerfile
 [ubuntu1804-jdk8-dockerfile]: https://github.com/scclouds/cloudstack-deb-builder/blob/master/ubuntu1804/Dockerfile
 [ubuntu1604-dockerfile]: https://github.com/scclouds/cloudstack-deb-builder/blob/master/ubuntu1604/Dockerfile
