@@ -183,7 +183,7 @@ if [ $show_help = true ]; then
         help=""
     fi
     cat << USAGE
-Usage: docker run ... khos2ow/cloudstack-deb-builder [DOCKER_OPTIONS] ... [PACKAGING_OPTIONS]...
+Usage: docker run ... scclouds/cloudstack-deb-builder [DOCKER_OPTIONS] ... [PACKAGING_OPTIONS]...
 CloudStack DEB builder which acts as a wrapper for CloudStack package script. Optionally
 you can  specify remote git repository and ref to  be cloned and checked out and run the
 packaging script on in.
@@ -198,8 +198,8 @@ Other arguments:
    -h, --help                              Display this help message and exit
 
 Examples:
-   docker run ... khos2ow/cloudstack-deb-builder [PACKAGING_OPTIONS] ...
-   docker run ... khos2ow/cloudstack-deb-builder --git-remote https://path.to.repo/cloudstack.git --git-ref foo-branch [PACKAGING_OPTIONS] ...
+   docker run ... scclouds/cloudstack-deb-builder [PACKAGING_OPTIONS] ...
+   docker run ... scclouds/cloudstack-deb-builder --git-remote https://path.to.repo/cloudstack.git --git-ref foo-branch [PACKAGING_OPTIONS] ...
 
 --------
 

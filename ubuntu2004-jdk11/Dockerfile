@@ -16,12 +16,11 @@
 # under the License.
 
 FROM ubuntu:20.04
-LABEL maintainer="Khosrow Moossavi <me@khosrow.io> (@khos2ow)"
+LABEL maintainer="SC Clouds <contato@scclouds.com.br> (@scclouds)"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 RUN ln -snf /user/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
         make \
@@ -35,17 +34,22 @@ RUN apt-get update -y && \
         genisoimage \
         git \
         maven \
-        openjdk-8-jdk \
+        openjdk-11-jdk \
         python \
         python3-mysqldb \
         python3-mysql.connector \
         dh-systemd \
-        python-setuptools && \
+        python-setuptools \
+        curl \
+        sudo && \
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - && \
+    apt-get install -y --no-install-recommends \
+        nodejs && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    update-java-alternatives -s java-1.8.0-openjdk-amd64
+    update-java-alternatives -s java-1.11.0-openjdk-amd64
 
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 VOLUME /mnt/build
 WORKDIR /mnt/build
