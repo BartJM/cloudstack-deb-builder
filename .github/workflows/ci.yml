@@ -8,6 +8,8 @@ on:
 
 env:
   REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+  CS_TEST_VERSION: "4.16" # CS version used to test container (jdk11)
+  CS_TEST_VERSION_8: "4.13" # CS version used to test container (jdk8)
 
 jobs:
   ubuntu1404:
@@ -22,7 +24,7 @@ jobs:
 
       - name: Test ubuntu1404
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh ubuntu1404 refs/heads/4.13 ""
+        run: ./scripts/test.sh ubuntu1404 refs/heads/${{ env.CS_TEST_VERSION_8 }} ""
 
       - name: Login to Docker
         uses: docker/login-action@v1
@@ -47,7 +49,7 @@ jobs:
 
       - name: Test ubuntu1604
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh ubuntu1604 refs/heads/4.13 ""
+        run: ./scripts/test.sh ubuntu1604 refs/heads/${{ env.CS_TEST_VERSION_8 }} ""
 
       - name: Login to Docker
         uses: docker/login-action@v1
@@ -72,7 +74,7 @@ jobs:
 
       - name: Test ubuntu1804
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh ubuntu1804 refs/heads/4.13 ""
+        run: ./scripts/test.sh ubuntu1804 refs/heads/${{ env.CS_TEST_VERSION_8 }} ""
 
       - name: Login to Docker
         uses: docker/login-action@v1
@@ -97,7 +99,7 @@ jobs:
 
       - name: Test ubuntu1804-jdk11
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh ubuntu1804-jdk11 refs/heads/4.15 ""
+        run: ./scripts/test.sh ubuntu1804-jdk11 refs/heads/${{ env.CS_TEST_VERSION }} ""
 
       - name: Login to Docker
         uses: docker/login-action@v1
@@ -122,7 +124,7 @@ jobs:
 
       - name: Test ubuntu2004
         if: "!contains(github.ref, 'refs/heads/master')"
-        run: ./scripts/test.sh ubuntu2004 refs/heads/4.13 ""
+        run: ./scripts/test.sh ubuntu2004 refs/heads/${{ env.CS_TEST_VERSION_8 }} ""
 
       - name: Login to Docker
         uses: docker/login-action@v1
